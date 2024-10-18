@@ -1,4 +1,4 @@
-# Como usar:
+# Tutorial de utilização:
 
 1 - Usar o mysql workbench para criar um banco dados de nome "automatebd";
 
