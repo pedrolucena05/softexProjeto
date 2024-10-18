@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valida projetos - Softex</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo55.png" alt="Logo Softex">
+    </header>
+    <main >
+        <div class="container">
+            
+            <img src="assets/logo.png" alt="Logo" style="width: 200px; margin-top: -40px;"/>
+            <h2>Bem vindo de volta!</h2>
+            <br>
+            
+            <form action="/navigate" method="POST">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password" style="margin-top: 20px;">Senha *</label>
+                <input type="password" id="password" name="password" required>
+                
+                <div class="image-container">
+                    <img src="assets/hidden.png" id="togglePassword" alt="Toggle Password Visibility" />
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+                
+                <input type="submit" value="Entrar" class="submit_button">
+                
+                <p style="margin-top: 20px; text-align: center;">
+                    Não possui uma conta? <a href="/cadastro" class="cadastro">Crie uma agora</a>
+                </p>
+            </form>
+            
+            
+            
+        </div>
+
+        <div id="error-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <p>E-mail ou senha incorretos. Tente novamente.</p>
+            </div>
+        </div>
+
+    </main>
+
+   
+    
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const modal = document.getElementById('error-modal');
+        const closeButton = document.querySelector('.close-button');
+
+        const errorMessage = "E-mail ou senha incorretos. Tente novamente.";
+        const logoutSucceed = "Logout concluido com sucesso!";
+
+        if (urlParams.has('error')) {
+            modal.style.display = 'block'; // Exibe o modal
+            modal.querySelector('p').textContent = errorMessage;
+        }
+
+        else if (urlParams.has('success')) {
+            modal.style.display = 'block'; // Exibe o modal
+            modal.querySelector('p').textContent = logoutSucceed;
+        }
+
+        // Fechar o modal quando clicar no botão de fechar
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Fechar o modal se o usuário clicar fora dele
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Seleciona o campo de senha e a imagem
+        const passwordInput = document.getElementById('password');
+        const togglePasswordButton = document.getElementById('togglePassword');
+        const main = document.getElementById('main');
+    
+        // Adiciona um evento de clique à imagem
+        togglePasswordButton.addEventListener('click', () => {
+            // Alterna o tipo do input entre 'password' e 'text' usando operador ternário
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+    
+            // Alterna a imagem ou texto do botão de acordo com a visibilidade da senha
+            togglePasswordButton.src = passwordInput.type === 'password' ? 'assets/hidden.png' : 'assets/show.png';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX; // Posição X do mouse
+            const y = e.clientY; // Posição Y do mouse
+            const width = window.innerWidth; // Largura da janela
+            const height = window.innerHeight; // Altura da janela
+            
+            // Calcular os ângulos para os gradientes com base na posição do mouse
+            const angle1 = (x / width) * 360; // Ângulo para o primeiro gradiente
+            const angle2 = (y / height) * 360; // Ângulo para o segundo gradiente
+
+            // Atualizar os gradientes com os novos ângulos
+            main.style.background = 
+                `linear-gradient(${angle1}deg, white, rgb(248, 241, 229)), 
+                 linear-gradient(${angle2}deg, white, rgb(254, 254, 245))`;
+        });
+
+    </script>
+    
+</body>
+</html>

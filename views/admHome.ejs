@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADM HOME</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/admHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="assets/logo55.png" alt="Logo Softex">
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div style="padding: 5px 0; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); position: relative;"><div style="height: 5px; width: 100%; box-shadow: 0 -4px 8px rgba(255, 255, 255, 0.3);"></div><span style="font-size: 18px; margin-left: 20px;">Menu</span></div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="nav-org">
+                                <span>Relatório</span>
+                                <span id="icone">&#8250;</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/cadastro">
+                            <div class="nav-org">
+                                <span>Cadastro</span>
+                                <span id="icone">&#8250;</span>
+                        
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div>
+                <a href="/logout">
+                    <div class="nav-org">
+                        <span id="exit">Sair</span>
+                        <span id="icone-sair"> ⤶ </span>
+                    
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="content">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Empresa</th>
+                        <th>Status</th>
+                        <th>Baixar Aqui</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% empresas.forEach(empresa => { %>
+                        <tr>
+                            <td><%= empresa.id %></td>
+                            <td><%= empresa.empresa %></td>
+                            <td class="<%= empresa.status === 1 ? 'status-active' : 'status-inactive' %>">
+                                <%= empresa.status === 1 ? 'Ativo' : 'Inativo' %>
+                            </td>
+                            <td><a href="documento_<%= empresa.empresa %>.pdf" class="download-link">Baixar</a></td>
+                        </tr>
+                    <% }); %>
+            
+                    <!-- Adicione linhas vazias se necessário -->
+                    <% for (let i = empresas.length; i < 14; i++) { %>
+                        <tr class="empty-row">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

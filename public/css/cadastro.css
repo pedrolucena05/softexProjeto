@@ -1,0 +1,133 @@
+html, body {
+    height: 100%; /* O HTML e o body ocupam 100% da altura da janela */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(254, 254, 245);
+
+    background: 
+        linear-gradient(to bottom right, white, rgb(254, 250, 242)), /* Gradiente do canto superior esquerdo para o inferior direito */
+        linear-gradient(to bottom left, white, rgb(254, 254, 245)); /* Gradiente do canto superior direito para o inferior esquerdo */
+    background-blend-mode: multiply; 
+    
+}
+
+header {
+    position: relative;
+    background-color: #DD7A2D;
+    width: 97%;
+    height: 65px;
+    position: relative;
+    display: flex; /* Flexbox para centralizar e facilitar o layout */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    padding-left: 3%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 7.5%;
+    
+}
+
+
+main {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70vw;
+    
+    margin: 0 auto;
+    justify-content: center;
+
+    
+    
+}
+
+main h1 {
+    margin-bottom: 50px;
+    margin-top: 80px;
+    font-size: 30px;
+}
+
+.form-line {
+    
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.form-line label {
+    
+    margin-bottom: 5px; /* Adiciona um espaço entre o label e o input */
+    color: #bbbbbb; /* Cor opcional para o texto do label */
+    font-size: 17px;
+    
+}
+
+.group input {
+    width: 500px;
+    margin-top: 2px;
+    height: 20px;
+    border: none;
+    background-color: rgba(254, 254, 245, 0);
+    border-bottom: 2px solid #dddddd;
+    
+}
+
+form input:focus {
+    outline: none;
+    border-bottom: 2px solid #9a9a9a;
+}
+
+.group label {
+    margin-top: 15px;
+}
+
+form span {
+    display: block; /* Faz com que o span se comporte como um bloco */
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 17px;
+}
+
+form span a {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.submisao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.submisao button {
+    width: 160px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#res {
+    background-color: black;
+    color: white;
+}
+
+#sub {
+    background-color: #DD7A2D;
+    color: white;
+    
+}

@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: rgb(254, 254, 245);
+
+    background: 
+        linear-gradient(to bottom right, white, rgb(254, 250, 242)), /* Gradiente do canto superior esquerdo para o inferior direito */
+        linear-gradient(to bottom left, white, rgb(254, 254, 245)); /* Gradiente do canto superior direito para o inferior esquerdo */
+    background-blend-mode: multiply; 
+    
+}
+
+header {
+    position: fixed;
+    background-color: #DD7A2D;
+    width: 100%;
+    height: 65px;
+    overflow: hidden;
+}
+
+.header-container {
+    position: relative;
+    display: flex; /* Flexbox para centralizar e facilitar o layout */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    width: 100%;
+    height: 60px;
+    padding-left: 3%;
+}
+
+header img {
+    width: 7.5%;
+    
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    border-top: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 60px);
+    width: 180px; /* Largura do menu lateral */
+    background-color: #DD7A2D;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 65px;
+   
+}
+
+
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 180px;
+
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nav-org {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding: 10px 0;
+    padding-left: 10px;
+}
+
+#exit {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/*.sidebar nav ul li {
+    color: white;
+    text-decoration: none;
+    
+
+}*/
+
+.sidebar nav ul li span {
+    font-size: 18px;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#icone {
+    margin-right: 15px;
+}
+
+#icone-sair {
+    margin-right: 15px;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+/*
+.nav-org:last-child  {
+    border-top: 1px solid white; /* Adiciona o border-bottom ao último item 
+    
+}
+
+.nav-org:first-child  {
+    border-bottom: 1px solid white; /* Adiciona o border-bottom ao último item 
+}
+*/
+
+.nav-org:hover {
+    background-color: #c55a08;
+    transition: 0.5s;
+}
+
+.content {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+    padding: 20px;
+    
+    margin-top: 65px; /* Espaço extra abaixo do header */
+    margin-left: 180px;
+   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f6f6f6;
+}
+
+.empty-row {
+    height: 37px;
+    
+}
+
+/* Coluna de status com cor diferente para facilitar a visualização */
+.status-active {
+    color: green;
+}
+
+.status-inactive {
+    color: red;
+}
+
+.download-link {
+    color: blue;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}

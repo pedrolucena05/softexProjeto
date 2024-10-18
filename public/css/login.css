@@ -1,0 +1,184 @@
+html, body {
+    height: 100%; /* O HTML e o body ocupam 100% da altura da janela */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(254, 254, 245);
+    
+}
+
+header {
+    position: relative;
+    background-color: #DD7A2D;
+    width: 97%;
+    height: 65px;
+    position: relative;
+    display: flex; /* Flexbox para centralizar e facilitar o layout */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    padding-left: 3%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    flex: 1; /* Faz o main expandir para ocupar o espaço restante */
+    display: flex;
+
+}
+
+header img {
+    width: 7.5%;
+    
+}
+
+main {
+    position: relative;
+    height: calc(100vh - 85px); /* Removido o espaço entre 'calc' e '(' */
+    background: 
+        linear-gradient(to bottom right, white, rgb(254, 250, 242)), /* Gradiente do canto superior esquerdo para o inferior direito */
+        linear-gradient(to bottom left, white, rgb(254, 254, 245)); /* Gradiente do canto superior direito para o inferior esquerdo */
+    background-blend-mode: multiply; 
+}
+
+.container {
+    width: 550px;
+    height: 75vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    /*border-top: 1px solid black;
+    border-bottom: 1px solid black;*/
+    border-radius: 5%;
+    margin-top: 2%;
+    background-repeat: no-repeat; /* Evita repetição do gradiente */
+    
+}
+
+
+h2 {
+    margin-bottom: 60px;
+    margin-top: -20px;
+    font-size: 27px;
+}
+
+
+
+form label {
+    display: block; /* Coloca o label e input em blocos separados */
+    width: 500px;
+    color: #bbbbbb;
+}
+
+form input {
+    border: none;
+    border-bottom: 2px solid #dddddd;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    background-color: rgb(254, 254, 245);
+    width: 500px;
+    color: black;
+}
+
+form input:focus {
+    outline: none;
+    border-bottom: 2px solid #9a9a9a;
+}
+
+form label:focus {
+    color: #9a9a9a;
+}
+
+.image-container {
+    display: flex;
+    position: relative;
+    width: 500px;
+    height: 20px;
+   
+}
+
+.image-container img {
+    position: absolute;
+    left: 480px;
+    bottom: 35px;
+    width: 16px;
+    height: 16px;
+}
+
+.image-container a {
+    color: rgb(76, 76, 255);
+    text-decoration: underline;
+    cursor: pointer;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.image-container img:hover {
+    cursor: pointer;
+}
+
+.submit_button {
+    color: white;
+    background-color: orange;
+    margin-top: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cadastro {
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(76, 76, 255);;
+}
+
+footer {
+    margin-bottom: 5vh;
+    
+}
+
+footer p {
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Permite rolagem se necessário */
+    background-color: rgb(0,0,0); /* Cor de fundo */
+    background-color: rgba(0,0,0,0.4); /* Fundo com opacidade */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Cor de fundo do conteúdo */
+    margin: 15% auto; /* Margem centralizada */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #888; /* Borda do modal */
+    width: 80%; /* Largura do modal */
+}
+
+.close-button {
+    color: #aaa; /* Cor do botão de fechar */
+    float: right; /* Posiciona à direita */
+    font-size: 28px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black; /* Cor ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado */
+    cursor: pointer; /* Muda o cursor */
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cadastro.css">    
+</head>
+<body>
+    <header>
+        <img src="assets/logo55.png" alt="Logo Softex">
+    </header>
+    <main>
+        
+        <img src="assets/logo12.PNG" alt="logo" style="width: 200px; margin-top: 55px; margin-bottom: 45px;">
+        
+        <form action="/submit-cadastro" method="POST">
+            <input type="hidden" name="previousRoute" value="<%= rotaAnterior %>">
+
+            <div class="form-line">
+                <div class="group">
+                    <label for="nome">Nome *</label><br/>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="group">
+                    <label for="cnpj">CNPJ *</label><br>
+                    <input type="text" id="cnpj" name="cnpj" required>
+                </div>
+            </div>
+
+            <div class="form-line">
+                <div class="group">
+                    <label for="email">E-mail *</label><br>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                
+                <div class="group">
+                    <label for="endereco">Endereço *</label><br>
+                    <input type="text" id="endereco" name="endereco" required>
+                </div>
+            </div>
+
+            <div class="form-line">
+                <div class="group">
+                    <label for="telefone">Telefone *</label><br>
+                    <input type="text" id="telefone" name="telefone" required>
+                </div>
+                
+                <div class="group">
+                    <label for="complemento">Complemento *</label><br>
+                    <input type="text" id="complemento" name="complemento" required>
+                </div>
+            </div>
+
+            <div class="form-line">
+                <div class="group">
+                    <label for="senha">Senha *</label><br>
+                    <input type="text" id="senha" name="senha" required>
+                </div>
+                
+                <div class="group">
+                    <label for="cidade">Cidade *</label><br>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+            </div>
+
+            <div class="form-line">
+                <div class="group">
+                    <label for="confirmarSenha">Confirmar Senha *</label><br>
+                    <input type="text" id="confirmarSenha" name="confirmarSenha" required>
+                </div>
+                
+                <div class="group">
+                    <label for="estado">Estado *</label><br>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+            </div>
+
+            <span>Ao clicar em cadastrar, concordo com os <a>Termos de uso</a></span>
+            <div class="submisao">
+                <button type="reset" style="margin-right: 10px;" id="res">Limpar</button>
+                <button type="submit" style="margin-left: 10px;" id="sub">Cadastrar</button>
+                
+            </div>
+        </form>
+    </main>
+</body>
+</html>
